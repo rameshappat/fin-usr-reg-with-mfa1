@@ -1,0 +1,1 @@
+const userService = require('../services/userService');\n\nexports.registerUser = async (req, res) => {\n  try {\n    const user = await userService.createUser(req.body);\n    res.status(201).json(user);\n  } catch (error) {\n    res.status(400).json({ message: error.message });\n  }\n};
